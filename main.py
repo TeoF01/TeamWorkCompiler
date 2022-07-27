@@ -60,12 +60,12 @@ def main_process():
 
             post_description(BROWSER=BROWSER, desc=str(data[3]))
 
-            # insert_button = search_html_element(browser=BROWSER, criterion=By.CLASS_NAME, param='action')
-            # if insert_button:
-            #     click_element(insert_button)
-            # else:
-            #     log.error(msg=f'Element insert_button not found..')
-            #     raise Exception
+            insert_button = search_html_element(browser=BROWSER, criterion=By.CLASS_NAME, param='action')
+            if insert_button:
+                click_element(insert_button)
+            else:
+                log.error(msg=f'Element insert_button not found..')
+                raise Exception
 
         close_session(BROWSER=BROWSER)
         log.info(msg=f'End Time')
